@@ -1,0 +1,58 @@
+canvas {
+    background: #d8f5f1;
+}
+table{
+    width: 480px;
+    background-color: #d5d5d5;
+}
+td{
+    font-size: 21px;
+}
+button{
+    text-align: center;
+    width: 180px;
+    font-size: 18px;
+    font-family: "Arial Black","Arial";
+    border: 2.5px solid #555555BF;
+}
+#live,#score,#high{
+    width: 80px;
+    text-align: left;
+}
+.test{
+    width: 80px;
+    text-align: center;
+}
+caption{
+    background-color: #d5d5d5;
+    color: #FF0000A8;
+    font-family: "Goudy Stout","Cooper Black","Arial Black";
+}
+#gameover{
+    position: absolute;
+    width : 400px;
+    height: 500px;
+    display: none;
+}
+#youwon{
+    width: 475px;
+    position: absolute;
+    top : 90px;
+    left : 0px;
+    display: none;
+}
+#youlose{
+    width:480px;
+    position: absolute;
+    top: 100px;
+    left : 0px;
+    display: none;
+}
+#restart{
+    position: absolute;
+    top: 360px;
+    left : 175px;
+    cursor: pointer;
+    font-size: 24px;
+    color : #000000FF;
+}

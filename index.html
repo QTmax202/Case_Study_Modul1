@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakout Game</title>
+    <link rel="stylesheet" href="BreakoutGame.css">
+</head>
+<body>
+<audio id="music" src="ting.mp3"></audio>
+<audio id="music1" src="y2mate.mp3"></audio>
+<div id="gameover">
+    <img src="youwin.png" alt="" id="youwon">
+    <img src="Gameover.png" alt="" id="youlose">
+    <div id="restart">Làm ván nữa!</div>
+</div>
+<table>
+    <caption><h2>Break Out Game</h2></caption>
+    <tr>
+        <td colspan="6"><canvas id="myGame" width="470" height="450"></canvas></td>
+    </tr>
+    <tr>
+        <td class="test">score: </td>
+        <td id="score"></td>
+        <td class="test">lives: </td>
+        <td id="live"></td>
+        <td class="test">High Score: </td>
+        <td id="high"></td>
+    </tr>
+    <tr>
+        <th colspan="6"><button onclick="playGame()">Play</button></th>
+    </tr>
+</table>
+</body>
+<script src="BreakoutGame.js"></script>
+<script src="playGame.js"></script>
+</html>
