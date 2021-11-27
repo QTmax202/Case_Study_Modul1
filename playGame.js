@@ -63,6 +63,11 @@ function drawLives() {
 }
 
 function drawHigh() {
+    for (let i = 0; i < localStorage.length; i++) {
+        if( Number(localStorage["score"+i]) > high){
+            high = Number(localStorage["score"+i])
+        }
+    }
     document.getElementById("high").innerHTML = high;
 }
 
@@ -74,7 +79,6 @@ function playGame() {
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBricks();
-        // drawBricks1();
         drawBall();
         drawPaddle();
         drawScore();
@@ -94,7 +98,7 @@ function playGame() {
             } else {
                 lives -= 1;
                 if (lives) {
-                    x = paddleX + 47.5 ;
+                    x = paddleX + 47.5;
                     y = canvas.height - 10;
                     dx = 3;
                     dy = -3;
@@ -102,6 +106,7 @@ function playGame() {
                     showYouLose();
                     dx = 0;
                     dy = 0;
+                    localStorage.setItem("score" +localStorage.length,score);
                 }
             }
         }
