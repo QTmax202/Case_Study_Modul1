@@ -18,10 +18,14 @@ button{
 #live,#score,#high{
     width: 80px;
     text-align: left;
+    font-family: "Edwardian Script ITC","Arial";
+    font-size: 24px;
 }
 .test{
     width: 80px;
     text-align: center;
+    font-family: "Edwardian Script ITC","Arial";
+    font-size: 24px;
 }
 caption{
     background-color: #d5d5d5;
