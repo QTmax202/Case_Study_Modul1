@@ -38,14 +38,14 @@ function collisionDetection() {
         for (let r = 0; r < brickRowCount; r++) {
             let b = bricks[c][r];
             if (b.status !== 0) {
-                if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                if (x > b.x + Radius && x < b.x + brickWidth + Radius && y > b.y + Radius && y < b.y + brickHeight + Radius) {
                     dy = -dy;
                     b.status = 0;
                     score++;
                     musicPlay();
                     if (score === brickColumnCount * brickRowCount) {
                         showYouWin();
-                        localStorage.setItem("score" +localStorage.length,score);
+                        localStorage.setItem("score" + localStorage.length, score);
                         dx = 0;
                         dy = 0;
                     }
@@ -65,8 +65,8 @@ function drawLives() {
 
 function drawHigh() {
     for (let i = 0; i < localStorage.length; i++) {
-        if( Number(localStorage["score"+i]) > high){
-            high = Number(localStorage["score"+i])
+        if (Number(localStorage["score" + i]) > high) {
+            high = Number(localStorage["score" + i])
         }
     }
     document.getElementById("high").innerHTML = high;
@@ -92,23 +92,21 @@ function playGame() {
         }
         if (y + dy < Radius) {
             dy = -dy;
+        } else if (y + dy > canvas.height - paddleHeight - Radius && x > paddleX && x < paddleX + paddleWidth) {
+            dy = -dy;
+            musicPlay1();
         } else if (y + dy > canvas.height - Radius) {
-            if (x > paddleX && x < paddleX + paddleWidth) {
-                dy = -dy;
-                musicPlay1();
+            lives -= 1;
+            if (lives) {
+                x = paddleX + (paddleWidth / 2);
+                y = canvas.height - 20;
+                dx = 3;
+                dy = -3;
             } else {
-                lives -= 1;
-                if (lives) {
-                    x = paddleX + 47.5;
-                    y = canvas.height - 10;
-                    dx = 3;
-                    dy = -3;
-                } else {
-                    showYouLose();
-                    dx = 0;
-                    dy = 0;
-                    localStorage.setItem("score" +localStorage.length,score);
-                }
+                showYouLose();
+                dx = 0;
+                dy = 0;
+                localStorage.setItem("score" + localStorage.length, score);
             }
         }
 
