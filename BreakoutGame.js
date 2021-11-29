@@ -68,7 +68,7 @@ function musicPlay() {
 
 function musicPlay1() {
     document.getElementById('music1').play();
-    window.removeEventListener('click', musicPlay);
+    window.removeEventListener('click', musicPlay1);
 }
 
 let gameover = document.getElementById("gameover");
