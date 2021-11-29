@@ -45,6 +45,7 @@ function collisionDetection() {
                     musicPlay();
                     if (score === brickColumnCount * brickRowCount) {
                         showYouWin();
+                        localStorage.setItem("score" +localStorage.length,score);
                         dx = 0;
                         dy = 0;
                     }
