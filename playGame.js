@@ -92,7 +92,7 @@ function playGame() {
         }
         if (y + dy < Radius) {
             dy = -dy;
-        } else if (y + dy > canvas.height - paddleHeight - Radius && x > paddleX && x < paddleX + paddleWidth) {
+        } else if (y + dy > canvas.height - paddleHeight - Radius && x > paddleX + Radius && x < paddleX + paddleWidth + Radius) {
             dy = -dy;
             musicPlay1();
         } else if (y + dy > canvas.height - Radius) {
